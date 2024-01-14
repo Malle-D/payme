@@ -1,0 +1,1 @@
+//Colorsconst primaryColor = 0xFF1f1f2b;const pantonColor = 0xFF307277;//Paddingconst primaryPadding = 16.0;
