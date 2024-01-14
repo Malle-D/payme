@@ -1,0 +1,1 @@
+import 'package:payme_clone/data/models/auth_model.dart';abstract class AppRepository {  Future<bool> checkNumber(AuthModel authModel);}

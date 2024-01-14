@@ -1,0 +1,1 @@
+class AuthModel {  String? number;  AuthModel(this.number);  AuthModel.fromJson(Map<String, dynamic> json) {    number = json['number'];  }  Map<String, dynamic> toJson() {    final Map<String, dynamic> data = <String, dynamic>{};    data['number'] = number;    return data;  }}

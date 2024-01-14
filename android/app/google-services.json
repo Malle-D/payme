@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263077537314",
+    "project_id": "payme-5e399",
+    "storage_bucket": "payme-5e399.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263077537314:android:cd2de9e8363726e5190c7b",
+        "android_client_info": {
+          "package_name": "com.example.payme_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-2tlwqNbp-yAa9Qe9_33-5lK7GOfct3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

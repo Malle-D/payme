@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA514f2Ec0tpIjAz_L-MGNkRNS8OBAyP0o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>383167786224</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.paymeClone</string>
+	<key>PROJECT_ID</key>
+	<string>fir-be9a1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-be9a1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:383167786224:ios:f5e17acee697092f1b6635</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-be9a1-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

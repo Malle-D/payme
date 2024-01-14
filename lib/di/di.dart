@@ -1,0 +1,1 @@
+import 'package:get_it/get_it.dart';import 'package:payme_clone/data/repository/app_repository.dart';import 'package:payme_clone/data/repository/impl/app_repository_impl.dart';final getIt = GetIt.instance;void setup() {  getIt.registerSingleton<AppRepository>(AppRepositoryImpl());}
