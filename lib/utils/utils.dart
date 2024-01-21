@@ -1,1 +1,1 @@
-//Colorsconst primaryColor = 0xFF1f1f2b;const pantonColor = 0xFF307277;const tealColor = 0xFF23c1c0;const darkerWhiteColor = 0xFFe1e2e7;const lightRedColor = 0xFFc26d6c; //to show errorconst disableTextColor = 0xFF3E3E4A;//Paddingconst primaryPadding = 16.0;
+//Colorsconst primaryColor = 0xFF1f1f2b;const pantonColor = 0xFF307277;const tealColor = 0xFF23c1c0;const darkerWhiteColor = 0xFFe1e2e7;const lighterDarkColor = 0xFF323440;const lightRedColor = 0xFFc26d6c; //to show errorconst disableTextColor = 0xFF3E3E4A;//Paddingconst primaryPadding = 16.0;
