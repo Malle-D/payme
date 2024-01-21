@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:payme_clone/di/di.dart';
 import 'package:payme_clone/presenter/pages/auth/auth_page.dart';
@@ -9,6 +10,10 @@ import 'package:payme_clone/utils/utils.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Color(primaryColor),
+  ));
+
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
