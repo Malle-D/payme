@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:payme_clone/di/di.dart';
 import 'package:payme_clone/presenter/pages/auth/auth_page.dart';
+import 'package:payme_clone/presenter/pages/home/home_page.dart';
 import 'package:payme_clone/utils/utils.dart';
 
 import 'firebase_options.dart';
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
         useMaterial3: true,
       ),
-      initialRoute: 'auth',
+      initialRoute: 'home',
       routes: {
         'auth': (context) => const AuthPage(),
+        'home': (context) => const HomePage(),
       },
     );
   }
