@@ -43,7 +43,10 @@ class _ConfirmPasswordPageState extends State<ConfirmPasswordPage> {
             child: KeyboardConfirmPassword(delete: (){
               controllerConfirmPassword.text = controllerConfirmPassword.text
                   .substring(0, controllerConfirmPassword.text.length - 1);
-            }, onSubmit: (){}, controller: controllerConfirmPassword, ),
+            }, onSubmit: (){
+              Navigator.pushReplacementNamed(context, 'pin_code');
+
+            }, controller: controllerConfirmPassword, ),
           ),
           SizedBox(height: primaryPadding,)
         ],

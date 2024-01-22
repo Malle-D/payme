@@ -30,7 +30,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w600,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
       ),
@@ -48,10 +48,10 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           children: [
             const Center(
               child: Text(
-                'Enter Your Pin',
+                'PIN-kodni o`rnatish?',
                 style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.black,
+                  fontSize: 18,
+                  color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -69,11 +69,11 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
                     width: isPinVisible ? 50 : 16,
                     height: isPinVisible ? 50 : 16,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6.0),
+                      borderRadius: BorderRadius.circular(15),
                       color: index < enteredPin.length
                           ? isPinVisible
-                          ? Colors.green
-                          : CupertinoColors.activeBlue
+                          ? Colors.white70
+                          : Colors.white70
                           : CupertinoColors.activeBlue.withOpacity(0.1),
                     ),
                     child: isPinVisible && index < enteredPin.length
@@ -94,19 +94,19 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
             ),
 
             /// visiblity toggle button
-            IconButton(
-              onPressed: () {
-                setState(() {
-                  isPinVisible = !isPinVisible;
-                });
-              },
-              icon: Icon(
-                isPinVisible ? Icons.visibility_off : Icons.visibility,
-              ),
-            ),
+            SizedBox(height: 300,),
+            // IconButton(
+            //   onPressed: () {
+            //     setState(() {
+            //       isPinVisible = !isPinVisible;
+            //     });
+            //   },
+            //   icon: Icon(
+            //     isPinVisible ? Icons.visibility_off : Icons.visibility,
+            //   ),
+            // ),
 
             SizedBox(height: isPinVisible ? 50.0 : 8.0),
-
             /// digits
             for (var i = 0; i < 3; i++)
               Padding(
@@ -141,7 +141,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
                     },
                     child: const Icon(
                       Icons.backspace,
-                      color: Colors.black,
+                      color: Colors.white,
                       size: 24,
                     ),
                   ),
@@ -161,7 +161,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
                 'Reset',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),

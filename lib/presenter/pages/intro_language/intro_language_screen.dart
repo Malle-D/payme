@@ -18,14 +18,17 @@ class IntroLanguageScreen extends StatelessWidget {
             Spacer(),
 
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.pushReplacementNamed(context, 'auth');
+
+              },
               child: Container(
                 height: 60,
                 width: 150,
                 child: Column(
                   children: [
                     Spacer(),
-                    Center(child: Text('Ozbekcha', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
+                    Center(child: Text('Русский', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
                     Spacer(),
                     Divider(height: 1, color: Colors.grey,)
                   ],
@@ -34,14 +37,16 @@ class IntroLanguageScreen extends StatelessWidget {
             ),
 
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.pushReplacementNamed(context, 'auth');
+              },
               child: Container(
                 height: 60,
                 width: 150,
                 child: Column(
                   children: [
                     Spacer(),
-                    Center(child: Text('Ozbekcha', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
+                    Center(child: Text('O`zbekcha', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
                     Spacer(),
                     Divider(height: 1, color: Colors.grey,)
                   ],
@@ -50,14 +55,16 @@ class IntroLanguageScreen extends StatelessWidget {
             ),
 
             InkWell(
-              onTap: (){},
+              onTap: (){
+                Navigator.pushReplacementNamed(context, 'auth');
+              },
               child: Container(
                 height: 60,
                 width: 150,
                 child: Column(
                   children: [
                     Spacer(),
-                    Center(child: Text('Ozbekcha', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
+                    Center(child: Text('English ', style: TextStyle(fontSize: 20, color: Color(darkerWhiteColor)),)),
                     Spacer()
                   ],
                 ),
