@@ -7,8 +7,8 @@ import 'package:payme_clone/presenter/pages/transfer/transfer_page.dart';
 import 'package:payme_clone/utils/utils.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({super.key});
-
+  final int currentPage;
+  const LandingScreen({required this.currentPage, super.key});
   @override
   State<LandingScreen> createState() => _LandingScreenState();
 }
@@ -16,6 +16,10 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
 
   int currentIndex = 0;
+
+  final PageStorageBucket bucket = PageStorageBucket();
+
+  Widget currentScreen = const HomePage();
 
   List<BottomNavigationBarItem> bottomNavItems = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
@@ -49,7 +53,27 @@ class _LandingScreenState extends State<LandingScreen> {
   ];
 
   @override
+  void initState() {
+
+    currentIndex = widget.currentPage;
+
+    if(currentIndex == 4){
+      currentScreen = const CashFlowPage();
+    } else if(currentIndex == 3){
+      currentScreen = const ServicesPage();
+    } else if (currentIndex == 2) {
+      currentScreen = const PaymentPage();
+    } else if (currentIndex == 1) {
+      currentScreen = const TransferPage();
+    } else {
+      currentScreen = const HomePage();
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    currentScreen = bottomNavScreen[currentIndex];
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -63,9 +87,11 @@ class _LandingScreenState extends State<LandingScreen> {
         unselectedLabelStyle: const TextStyle(
             color: Color(bottomNavBarItemDisable)
         ),
-        onTap: (value) {
-          // Respond to item press.
-          setState(() => currentIndex = value);
+        onTap: (int index) {
+          setState(() {
+            currentScreen = bottomNavScreen[index];
+            currentIndex = index;
+          });
         },
         items: bottomNavItems,
       ),
