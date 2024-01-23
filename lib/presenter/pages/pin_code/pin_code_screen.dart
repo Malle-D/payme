@@ -46,6 +46,7 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           physics: const BouncingScrollPhysics(),
           children: [
+            const SizedBox(height: 60,),
             const Center(
               child: Text(
                 'PIN-kodni o`rnatish?',
@@ -153,12 +154,14 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
             /// reset button
             TextButton(
               onPressed: () {
-                setState(() {
-                  enteredPin = '';
-                });
+                // setState(() {
+                //   enteredPin = '';
+                // });
+
+                Navigator.pushReplacementNamed(context, 'landing');
               },
               child: const Text(
-                'Reset',
+                'Submit',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,

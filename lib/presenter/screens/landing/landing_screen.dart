@@ -39,7 +39,7 @@ class _LandingScreenState extends State<LandingScreen> {
       label: 'Services',
     ),
     const BottomNavigationBarItem(
-      icon: Icon(Icons.perm_identity_outlined),
+      icon: Icon(Icons.access_time),
       label: 'Cash flow',
     )
   ];
@@ -75,6 +75,10 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     currentScreen = bottomNavScreen[currentIndex];
     return Scaffold(
+      body: PageStorage(
+        bucket: bucket,
+        child: currentScreen,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,

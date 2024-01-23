@@ -10,6 +10,7 @@ import 'package:payme_clone/presenter/pages/payment/payment_page.dart';
 import 'package:payme_clone/presenter/pages/pin_code/pin_code_screen.dart';
 import 'package:payme_clone/presenter/pages/home/home_page.dart';
 import 'package:payme_clone/presenter/pages/service/services_page.dart';
+import 'package:payme_clone/presenter/screens/landing/landing_screen.dart';
 import 'package:payme_clone/utils/utils.dart';
 
 import 'firebase_options.dart';
@@ -54,7 +55,8 @@ class MyApp extends StatelessWidget {
         'pin_code': (context) => const PinCodeScreen(),
         'home': (context) => const HomePage(),
         'payment': (context) => const PaymentPage(),
-        'services': (context) => const ServicesPage()
+        'services': (context) => const ServicesPage(),
+        'landing' :(context) => const LandingScreen(currentPage: 0)
       }
     );
   }
