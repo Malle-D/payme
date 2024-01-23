@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
         useMaterial3: true,
       ),
-      initialRoute: 'intro_language',
+      initialRoute: 'landing',
       routes: {
         'auth': (context) => const AuthPage(),
         'intro_language': (context) => const IntroLanguageScreen(),
