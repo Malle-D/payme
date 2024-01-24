@@ -1,0 +1,1 @@
+part of 'theme_bloc.dart';@immutableabstract class ThemeState {}class ThemeInitial extends ThemeState {}class ChangeBgState extends ThemeState {  final String str;  ChangeBgState(this.str);}

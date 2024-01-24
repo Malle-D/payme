@@ -1,0 +1,1 @@
+part of 'theme_bloc.dart';@immutableabstract class ThemeEvent {}class ChangeBgEvent extends ThemeEvent {  final String str;  ChangeBgEvent(this.str);}
