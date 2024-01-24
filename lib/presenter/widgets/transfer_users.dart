@@ -14,8 +14,8 @@ Widget transferUser(String name, String secondName) {
         width: 70,
         height: 70,
         decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(40)
+            color: color,
+            borderRadius: BorderRadius.circular(40)
         ),
         child: Center(
           child: Text(
@@ -30,14 +30,14 @@ Widget transferUser(String name, String secondName) {
       ),
       const SizedBox(height: 10),
       Text(name, style: const TextStyle(
-        color: Colors.white54,
-        fontSize: 15,
-        height: 0
+          color: Colors.white54,
+          fontSize: 15,
+          height: 0
       )),
       Text(secondName, style: const TextStyle(
-        color: Colors.white54,
-        fontSize: 15,
-        height: 0
+          color: Colors.white54,
+          fontSize: 15,
+          height: 0
       ))
     ],
   );

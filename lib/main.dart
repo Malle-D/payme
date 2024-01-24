@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:payme_clone/data/preference/my_preference.dart';
 import 'package:payme_clone/di/di.dart';
 import 'package:payme_clone/presenter/pages/auth/auth_page.dart';
 import 'package:payme_clone/presenter/pages/confirm_password/confirm_password_page.dart';
@@ -30,7 +31,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  MyPreference.init();
   setup();
 
   runApp(const MyApp());
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'home',
+        initialRoute: 'landing',
         routes: {
           'auth': (context) => const AuthPage(),
           'intro_language': (context) => const IntroLanguageScreen(),

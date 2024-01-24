@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payme_clone/presenter/widgets/transfer_postcard.dart';
 import '../../../utils/utils.dart';
-import '../../widgets/transfer_btn.dart';
 import '../../widgets/transfer_field.dart';
 import '../../widgets/transfer_items.dart';
 import '../../widgets/transfer_users.dart';
@@ -54,6 +52,15 @@ class _TransferPageState extends State<TransferPage> {
                     fontWeight: FontWeight.w500,
                     fontSize: 15)),
             const SizedBox(height: 16),
+            const Padding(
+              padding: EdgeInsets.only(left: 15.0),
+              child: Text("Karta yoki telefon raqami",
+                  style: TextStyle(
+                      color: Color(0xff8f929b),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12)),
+            ),
+            const SizedBox(height: 5),
             transferTextField(textController, _textFieldFocusNode),
             const SizedBox(height: 30),
             Row(
@@ -74,7 +81,27 @@ class _TransferPageState extends State<TransferPage> {
             ),
             const Spacer(),
             if (!_textFieldFocusNode.hasFocus)
-              transferPostcard(context),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: const Color(tealColor),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Tabriknoma qo'shish",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Image.asset("assets/images/postcard.png",
+                        width: 85, height: 70)
+                  ],
+                ),
+              ),
             if (!_textFieldFocusNode.hasFocus) const SizedBox(height: 16),
             if (!_textFieldFocusNode.hasFocus)
               Row(
@@ -89,7 +116,25 @@ class _TransferPageState extends State<TransferPage> {
                 ],
               ),
             if (_textFieldFocusNode.hasFocus)
-              transferBtn(context)
+              Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    color: const Color(tealColor),
+                    borderRadius: BorderRadius.circular(15)),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.0),
+                      child: Text(
+                        "Oldinga",
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
       ),
