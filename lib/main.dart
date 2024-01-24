@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         'intro_language': (context) => const IntroLanguageScreen(),
         'confirm_password': (context) => const ConfirmPasswordPage(),
         'pin_code': (context) => const PinCodeScreen(),
-        'home': (context) => const HomePage(),
+        'home': (context) => HomePage(),
         'payment': (context) => const PaymentPage(),
         'services': (context) => const ServicesPage(),
         'landing' :(context) => const LandingScreen(currentPage: 0)
