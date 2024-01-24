@@ -19,33 +19,33 @@ class _LandingScreenState extends State<LandingScreen> {
 
   final PageStorageBucket bucket = PageStorageBucket();
 
-  Widget currentScreen = const HomePage();
+  Widget currentScreen = HomePage();
 
   List<BottomNavigationBarItem> bottomNavItems = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
       icon: Icon(Icons.home_filled),
-      label: 'Home',
+      label: 'Asosiy',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.swap_horiz),
-      label: 'Transfer',
+      label: "O'tkazma",
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.payment),
-      label: 'Payment',
+      label: "To'lov",
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.menu),
-      label: 'Services',
+      label: 'Servislar',
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.access_time),
-      label: 'Cash flow',
+      label: 'Kirim-chiqim',
     )
   ];
 
   List<Widget> bottomNavScreen = <Widget>[
-    const HomePage(),
+    HomePage(),
     const TransferPage(),
     const PaymentPage(),
     const ServicesPage(),
@@ -66,7 +66,7 @@ class _LandingScreenState extends State<LandingScreen> {
     } else if (currentIndex == 1) {
       currentScreen = const TransferPage();
     } else {
-      currentScreen = const HomePage();
+      currentScreen = HomePage();
     }
     super.initState();
   }
