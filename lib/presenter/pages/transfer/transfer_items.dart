@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 Widget transferItems(String title, String image) {
@@ -5,8 +7,8 @@ Widget transferItems(String title, String image) {
     width: 100,
     height: 100,
     decoration: BoxDecoration(
-        color: const Color(0xff323440),
-        borderRadius: BorderRadius.circular(10)
+      color: const Color(0xff323440),
+      borderRadius: BorderRadius.circular(10)
     ),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../utils/utils.dart';
+
+import '../../../utils/utils.dart';
 
 Widget transferTextField(TextEditingController textController, FocusNode textFieldFocusNode) {
-
   const border = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(10)),
   );
@@ -16,8 +16,6 @@ Widget transferTextField(TextEditingController textController, FocusNode textFie
     borderSide: BorderSide(color: Color(lightRedColor), width: 1.0),
     borderRadius: BorderRadius.all(Radius.circular(10)),
   );
-
-
   return TextField(
     focusNode: textFieldFocusNode,
     controller: textController,
@@ -59,9 +57,9 @@ Widget transferTextField(TextEditingController textController, FocusNode textFie
 class _CreditCardNumberFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue,
-      TextEditingValue newValue,
-      ) {
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
     final StringBuffer newText = StringBuffer();
 
     for (int i = 0; i < newValue.text.length; i++) {
