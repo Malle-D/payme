@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:payme_clone/presenter/pages/transfer/transfer_field.dart';
 import 'package:payme_clone/presenter/pages/transfer/transfer_items.dart';
 import 'package:payme_clone/presenter/pages/transfer/transfer_users.dart';
 import '../../../utils/utils.dart';
