@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:payme_clone/presenter/pages/transfer/transfer_field.dart';
+import 'package:payme_clone/presenter/pages/transfer/transfer_items.dart';
+import 'package:payme_clone/presenter/pages/transfer/transfer_users.dart';
 import '../../../utils/utils.dart';
-import '../../widgets/transfer_field.dart';
-import '../../widgets/transfer_items.dart';
-import '../../widgets/transfer_users.dart';
 
 class TransferPage extends StatefulWidget {
   const TransferPage({super.key});
@@ -15,6 +16,8 @@ class _TransferPageState extends State<TransferPage> {
   TextEditingController textController = TextEditingController();
 
   final FocusNode _textFieldFocusNode = FocusNode();
+
+  bool textEditing = false;
 
   @override
   void dispose() {
@@ -61,11 +64,59 @@ class _TransferPageState extends State<TransferPage> {
                       fontSize: 12)),
             ),
             const SizedBox(height: 5),
-            transferTextField(textController, _textFieldFocusNode),
+            // transferTextField(textController, _textFieldFocusNode),
+            TextField(
+              onEditingComplete: (){
+                setState(() {
+                  textEditing = false;
+                  SystemChannels.textInput.invokeMethod('TextInput.hide');
+                });
+              },
+              onTap: (){
+                setState(() {
+                  textEditing = true;
+                });
+              },
+              focusNode: _textFieldFocusNode,
+              controller: textController,
+              keyboardType: TextInputType.number,
+              style: const TextStyle(color: Colors.white),
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+                LengthLimitingTextInputFormatter(16),
+                _CreditCardNumberFormatter(),
+              ],
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: const Color(0xff141517),
+                contentPadding: EdgeInsets.all(10),
+                hintText: 'Karta yoki telefon raqami',
+                hintStyle: const TextStyle(
+                    color: Color(0xff3c3d42), fontWeight: FontWeight.w400),
+                // border: border,
+                // errorBorder: errorBorder,
+                // disabledBorder: border,
+                // focusedBorder: focusedBorder,
+                // focusedErrorBorder: errorBorder,
+                prefixIcon: IconButton(
+                  icon: Icon(Icons.credit_card),
+                  onPressed: () {
+                    textController.clear();
+                  },
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.document_scanner_outlined),
+                  onPressed: () {
+                    // textController.clear();
+                    print(textEditing);
+                  },
+                ),
+              ),
+            ),
             const SizedBox(height: 30),
-            Row(
+            const Row(
               children: [
-                transferUser("Isfan", "Malle"),
+                TransferUser("Isfan", "Malle"),
               ],
             ),
             const Row(
@@ -80,63 +131,94 @@ class _TransferPageState extends State<TransferPage> {
               ],
             ),
             const Spacer(),
-            if (!_textFieldFocusNode.hasFocus)
-              Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: const Color(tealColor),
-                    borderRadius: BorderRadius.circular(15)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Builder(builder: (BuildContext context) {
+              if (textEditing && _textFieldFocusNode.hasFocus) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                      color: const Color(tealColor),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        child: Text(
+                          "Oldinga",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              } else {
+                return Column(
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(
-                        "Tabriknoma qo'shish",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w500),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: const Color(tealColor),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 20),
+                            child: Text(
+                              "Tabriknoma qo'shish",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Image.asset("assets/images/postcard.png",
+                              width: 85, height: 70)
+                        ],
                       ),
                     ),
-                    Image.asset("assets/images/postcard.png",
-                        width: 85, height: 70)
-                  ],
-                ),
-              ),
-            if (!_textFieldFocusNode.hasFocus) const SizedBox(height: 16),
-            if (!_textFieldFocusNode.hasFocus)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  transferItems(
-                      "Valyuta ayirboshlash", "assets/images/postcard.png"),
-                  transferItems(
-                      "O'z kartamga o'tkazish", "assets/images/postcard.png"),
-                  transferItems(
-                      "Mening kontaktlarim", "assets/images/postcard.png"),
-                ],
-              ),
-            if (_textFieldFocusNode.hasFocus)
-              Container(
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: const Color(tealColor),
-                    borderRadius: BorderRadius.circular(15)),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12.0),
-                      child: Text(
-                        "Oldinga",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w500),
-                      ),
+                    const SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        transferItems("Valyuta ayirboshlash",
+                            "assets/images/postcard.png"),
+                        transferItems("O'z kartamga o'tkazish",
+                            "assets/images/postcard.png"),
+                        transferItems("Mening kontaktlarim",
+                            "assets/images/postcard.png"),
+                      ],
                     ),
                   ],
-                ),
-              ),
+                );
+              }
+            })
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _CreditCardNumberFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final StringBuffer newText = StringBuffer();
+
+    for (int i = 0; i < newValue.text.length; i++) {
+      if (i > 0 && i % 4 == 0) {
+        newText.write(' '); // Вставляем пробел каждые 4 символа
+      }
+      newText.write(newValue.text[i]);
+    }
+
+    return TextEditingValue(
+      text: newText.toString(),
+      selection: TextSelection.collapsed(
+        offset: newText.length,
       ),
     );
   }
