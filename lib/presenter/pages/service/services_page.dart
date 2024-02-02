@@ -52,27 +52,30 @@ class ServicesPage extends StatelessWidget {
                         children: [
                           Image.asset(elements[index].img, height: 64, width: 64,),
                           const SizedBox(width: 8),
-                          SizedBox(
-                            width: 280,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  elements[index].title,
-                                  style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                Visibility(
-                                  visible: elements[index].description.isNotEmpty,
-                                  child: Text(
-                                    elements[index].description,
-                                    style: TextStyle(color: Colors.white.withAlpha(200), fontSize: 12),
+                          Flexible(
+                            child: SizedBox(
+                              // width: 280,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    elements[index].title,
+                                    style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                   ),
-                                ),
-                              ],
+                                  Visibility(
+                                    visible: elements[index].description.isNotEmpty,
+                                    child: Text(
+                                      elements[index].description,
+                                      style: TextStyle(color: Colors.white.withAlpha(200), fontSize: 12),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(width: 8,)
