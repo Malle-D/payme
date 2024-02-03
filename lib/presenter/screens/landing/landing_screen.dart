@@ -79,25 +79,30 @@ class _LandingScreenState extends State<LandingScreen> {
         bucket: bucket,
         child: currentScreen,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        backgroundColor: const Color(bottomNavBarBg),
-        selectedItemColor: const Color(tealColor),
-        unselectedItemColor: const Color(bottomNavBarItemDisable),
-        selectedLabelStyle: const TextStyle(
-            color: Color(tealColor)
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          splashColor: Colors.transparent
         ),
-        unselectedLabelStyle: const TextStyle(
-            color: Color(bottomNavBarItemDisable)
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: currentIndex,
+          backgroundColor: const Color(bottomNavBarBg),
+          selectedItemColor: const Color(tealColor),
+          unselectedItemColor: const Color(bottomNavBarItemDisable),
+          selectedLabelStyle: const TextStyle(
+              color: Color(tealColor)
+          ),
+          unselectedLabelStyle: const TextStyle(
+              color: Color(bottomNavBarItemDisable)
+          ),
+          onTap: (int index) {
+            setState(() {
+              currentScreen = bottomNavScreen[index];
+              currentIndex = index;
+            });
+          },
+          items: bottomNavItems,
         ),
-        onTap: (int index) {
-          setState(() {
-            currentScreen = bottomNavScreen[index];
-            currentIndex = index;
-          });
-        },
-        items: bottomNavItems,
       ),
     );
   }
