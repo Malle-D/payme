@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'sign_up',
+        initialRoute: 'landing',
         routes: {
           'auth': (context) => const AuthPage(),
           'sign_up': (context) => const SignUpPage(),
