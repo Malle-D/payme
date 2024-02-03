@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:payme_clone/presenter/widgets/btn_search_widget.dart';
-
 import '../../../utils/utils.dart';
 
 class PaymentPage extends StatelessWidget {
