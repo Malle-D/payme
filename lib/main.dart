@@ -11,6 +11,8 @@ import 'package:payme_clone/presenter/pages/payment/payment_page.dart';
 import 'package:payme_clone/presenter/pages/pin_code/pin_code_screen.dart';
 import 'package:payme_clone/presenter/pages/home/home_page.dart';
 import 'package:payme_clone/presenter/pages/service/services_page.dart';
+import 'package:payme_clone/presenter/pages/sign_up/bloc/sign_up_bloc.dart';
+import 'package:payme_clone/presenter/pages/sign_up/sign_up_page.dart';
 import 'package:payme_clone/presenter/pages/theme/theme_page.dart';
 import 'package:payme_clone/presenter/screens/landing/landing_screen.dart';
 import 'package:payme_clone/utils/utils.dart';
@@ -53,6 +55,7 @@ class MyApp extends StatelessWidget {
         initialRoute: 'landing',
         routes: {
           'auth': (context) => const AuthPage(),
+          'sign_up': (context) => const SignUpPage(),
           'intro_language': (context) => const IntroLanguageScreen(),
           'confirm_password': (context) => const ConfirmPasswordPage(),
           'pin_code': (context) => const PinCodeScreen(),
