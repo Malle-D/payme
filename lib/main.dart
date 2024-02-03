@@ -20,6 +20,7 @@ import 'package:payme_clone/utils/utils.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  setup();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Color(primaryColor),
   ));
@@ -34,7 +35,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   MyPreference.init();
-  setup();
 
   runApp(const MyApp());
 }
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'landing',
+        initialRoute: 'sign_up',
         routes: {
           'auth': (context) => const AuthPage(),
           'sign_up': (context) => const SignUpPage(),
