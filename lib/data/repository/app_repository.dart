@@ -1,1 +1,1 @@
-import 'package:payme_clone/data/models/auth_model.dart';abstract class AppRepository {  Future<bool> checkNumber(AuthModel authModel);}
+import 'package:payme_clone/data/models/auth_model.dart';import 'package:payme_clone/data/models/sign_up/sign_up_model.dart';import '../models/sign_up/response/sign_up_response.dart';abstract class AppRepository {  Future<bool> checkNumber(AuthModel authModel);  Future<SignUpResponse> signUpUser(SignUpModel signUpModel);}
