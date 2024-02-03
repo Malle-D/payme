@@ -11,7 +11,8 @@ import 'package:payme_clone/presenter/pages/payment/payment_page.dart';
 import 'package:payme_clone/presenter/pages/pin_code/pin_code_screen.dart';
 import 'package:payme_clone/presenter/pages/home/home_page.dart';
 import 'package:payme_clone/presenter/pages/service/services_page.dart';
-import 'package:payme_clone/presenter/pages/sing_in/sing_in.dart';
+import 'package:payme_clone/presenter/pages/sign_up/bloc/sign_up_bloc.dart';
+import 'package:payme_clone/presenter/pages/sign_up/sign_up_page.dart';
 import 'package:payme_clone/presenter/pages/theme/theme_page.dart';
 import 'package:payme_clone/presenter/screens/landing/landing_screen.dart';
 import 'package:payme_clone/utils/utils.dart';
@@ -19,6 +20,7 @@ import 'package:payme_clone/utils/utils.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  setup();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Color(primaryColor),
   ));
@@ -33,7 +35,6 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   MyPreference.init();
-  setup();
 
   runApp(const MyApp());
 }
@@ -51,9 +52,10 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'sing_in',
+        initialRoute: 'sign_up',
         routes: {
           'auth': (context) => const AuthPage(),
+          'sign_up': (context) => const SignUpPage(),
           'intro_language': (context) => const IntroLanguageScreen(),
           'confirm_password': (context) => const ConfirmPasswordPage(),
           'pin_code': (context) => const PinCodeScreen(),
@@ -61,8 +63,7 @@ class MyApp extends StatelessWidget {
           'payment': (context) => const PaymentPage(),
           'services': (context) => const ServicesPage(),
           'landing': (context) => const LandingScreen(currentPage: 0),
-          'theme': (context) => const ThemePage(),
-          'sing_in' : (context) => const SingIn()
+          'theme': (context) => const ThemePage()
         });
   }
 }

@@ -42,7 +42,12 @@ dependencies:
   flutter_svg: ^2.0.9
   carousel_slider: ^4.2.1
   dotted_border: ^2.1.0
+  dropdown_button2: ^2.3.9
 
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  json_annotation:
+  freezed:
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -52,9 +57,6 @@ flutter_launcher_icons:
   icon_background_color: "#ffffff"
   icon_size: 48
   min_sdk_android: 21 # android min sdk min:16, default 21
-  freezed: ^2.4.6
-  json_annotation: ^4.8.1
-  dotted_border: ^2.0.0
 
 
 dev_dependencies:
@@ -67,8 +69,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  build_runner: '>=2.3.0 <4.0.0'
-  json_serializable: ^6.6.2
+  build_runner:
+  json_serializable:
+  retrofit_generator: '>=7.0.0 <8.0.0'
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

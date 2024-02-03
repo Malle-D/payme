@@ -23,6 +23,19 @@ class MyPreference {
     return _pref.getString('bg') ?? 'assets/images/img_bg1.jpg';
   }
 
+  static bool? isLogin() {
+    return _pref.getBool("login");
+  }
+
+  static void saveToken(String token) {
+    _pref.setString("token", token);
+  }
+
+  static String? getToken() {
+    return _pref.getString("token");
+  }
+
+
   static void setPinCode(String pinCode) {
     _pref.setString("pin", pinCode);
   }
