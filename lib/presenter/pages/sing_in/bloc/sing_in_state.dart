@@ -6,5 +6,5 @@ abstract class SingInState{}
 class SingInInitial extends SingInState {}
 
 class SingInSubmit extends SingInState{
-
+  SingInSubmit(Future<SignInResponse> singInUser);
 }

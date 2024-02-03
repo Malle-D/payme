@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:payme_clone/data/models/sing_in/sign_in_model.dart';
 import 'package:payme_clone/utils/utils.dart';
 import '../../widgets/btn_registration_widget.dart';
 import '../../widgets/sing_in_field.dart';
@@ -60,7 +61,7 @@ class _SingInState extends State<SingIn> {
                   const Spacer(),
                   InkWell(
                     onTap: (){
-
+                      _bloc.add(SingInEvent(controllerNumber.text, controllerPassword.text));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
