@@ -1,0 +1,1 @@
+import 'package:freezed_annotation/freezed_annotation.dart';part 'sign_in_model.g.dart';part 'sign_in_model.freezed.dart';@freezedclass SignInModel with _$SignInModel {  @JsonSerializable(explicitToJson: true)  const factory SignInModel(    String? phone,    String? password,  ) = _SignInModel;}
