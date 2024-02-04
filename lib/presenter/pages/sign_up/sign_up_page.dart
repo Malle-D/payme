@@ -154,7 +154,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Spacer(),
 
                 buttonRegistration(() {
-                  bloc.add(SignUpUserEvent(SignUpModel(controllerPhone.text, controllerPassword.text, controllerFirstName.text, controllerLastName.text, controllerBornDateMilli.text, 0)));
+                  bloc.add(SignUpUserEvent(SignUpModel('+998${controllerPhone.text.replaceAll(' ', '')}', controllerPassword.text, controllerFirstName.text, controllerLastName.text, controllerBornDateMilli.text, 0)));
                 }),
 
                 const SizedBox(height: primaryPadding,),

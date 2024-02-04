@@ -23,16 +23,16 @@ class _ApiService implements ApiService {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = signUpModel;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SignUpResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'http://195.158.16.140/v1/mobile-bank/auth/sign-up',
+              'http://195.158.16.140/mobile-bank/v1/auth/sign-up',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -53,13 +53,13 @@ class _ApiService implements ApiService {
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SignInResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'http://195.158.16.140/v1/mobile-bank/auth/sign-in',
+              'http://195.158.16.140/mobile-bank/v1/auth/sign-in',
               queryParameters: queryParameters,
               data: _data,
             )

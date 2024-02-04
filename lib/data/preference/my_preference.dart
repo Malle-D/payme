@@ -35,6 +35,21 @@ class MyPreference {
     return _pref.getString("token");
   }
 
+  static void saveAccessToken(String token) {
+    _pref.setString("accessToken", token);
+  }
+
+  static String? getAccessToken() {
+    return _pref.getString("accessToken");
+  }
+
+  static void saveRefreshToken(String token) {
+    _pref.setString("refreshToken", token);
+  }
+
+  static String? getRefreshToken() {
+    return _pref.getString("refreshToken");
+  }
 
   static void setPinCode(String pinCode) {
     _pref.setString("pin", pinCode);

@@ -17,15 +17,16 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     on<SignUpUserEvent>((event, emit) async {
       try {
         final result = await _repository.signUpUser(event.signUpModel);
-
         if (result.token != null) {
           emit(SuccessState(result));
           MyPreference.saveToken(result.token.toString());
-          print(result.token);
+          print('+++++++++++++++++++++++++${result.token}');
         } else {
+          print('+++++++++++++++++++++++++${result.message}');
           emit(FailState(result.message ?? ''));
         }
       } catch (e) {
+        print('-------------------------------- ${e.toString()}');
         emit(FailState(e.toString()));
       }
     });
