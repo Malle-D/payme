@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SignInModel _$SignInModelFromJson(Map<String, dynamic> json) {
+  return _SignInModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$SignInModel {
   String? get phone => throw _privateConstructorUsedError;
   String? get password => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SignInModelCopyWith<SignInModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -101,10 +106,12 @@ class __$$SignInModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable()
 class _$SignInModelImpl implements _SignInModel {
   const _$SignInModelImpl(this.phone, this.password);
+
+  factory _$SignInModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SignInModelImplFromJson(json);
 
   @override
   final String? phone;
@@ -126,6 +133,7 @@ class _$SignInModelImpl implements _SignInModel {
                 other.password == password));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, phone, password);
 
@@ -134,11 +142,21 @@ class _$SignInModelImpl implements _SignInModel {
   @pragma('vm:prefer-inline')
   _$$SignInModelImplCopyWith<_$SignInModelImpl> get copyWith =>
       __$$SignInModelImplCopyWithImpl<_$SignInModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SignInModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _SignInModel implements SignInModel {
   const factory _SignInModel(final String? phone, final String? password) =
       _$SignInModelImpl;
+
+  factory _SignInModel.fromJson(Map<String, dynamic> json) =
+      _$SignInModelImpl.fromJson;
 
   @override
   String? get phone;

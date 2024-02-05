@@ -22,8 +22,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           MyPreference.saveToken(result.token.toString());
           print('+++++++++++++++++++++++++${result.token}');
         } else {
-          print('+++++++++++++++++++++++++${result.message}');
-          emit(FailState(result.message ?? ''));
+          // print('+++++++++++++++++++++++++${result.message}');
+          // emit(FailState(result.message ?? ''));
         }
       } catch (e) {
         print('-------------------------------- ${e.toString()}');

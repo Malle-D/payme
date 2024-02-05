@@ -14,18 +14,23 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SignUpModel _$SignUpModelFromJson(Map<String, dynamic> json) {
+  return _SignUpModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$SignUpModel {
-  String? get phone => throw _privateConstructorUsedError;
-  String? get password => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
   @JsonKey(name: 'first-name')
-  String? get firstName => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
   @JsonKey(name: 'last-name')
-  String? get lastName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   @JsonKey(name: 'born-date')
-  String? get bornDate => throw _privateConstructorUsedError;
-  int? get gender => throw _privateConstructorUsedError;
+  String get bornDate => throw _privateConstructorUsedError;
+  int get gender => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SignUpModelCopyWith<SignUpModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -38,12 +43,12 @@ abstract class $SignUpModelCopyWith<$Res> {
       _$SignUpModelCopyWithImpl<$Res, SignUpModel>;
   @useResult
   $Res call(
-      {String? phone,
-      String? password,
-      @JsonKey(name: 'first-name') String? firstName,
-      @JsonKey(name: 'last-name') String? lastName,
-      @JsonKey(name: 'born-date') String? bornDate,
-      int? gender});
+      {String phone,
+      String password,
+      @JsonKey(name: 'first-name') String firstName,
+      @JsonKey(name: 'last-name') String lastName,
+      @JsonKey(name: 'born-date') String bornDate,
+      int gender});
 }
 
 /// @nodoc
@@ -59,38 +64,38 @@ class _$SignUpModelCopyWithImpl<$Res, $Val extends SignUpModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = freezed,
-    Object? password = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? bornDate = freezed,
-    Object? gender = freezed,
+    Object? phone = null,
+    Object? password = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? bornDate = null,
+    Object? gender = null,
   }) {
     return _then(_value.copyWith(
-      phone: freezed == phone
+      phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
+              as String,
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstName: freezed == firstName
+              as String,
+      firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: freezed == lastName
+              as String,
+      lastName: null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bornDate: freezed == bornDate
+              as String,
+      bornDate: null == bornDate
           ? _value.bornDate
           : bornDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gender: freezed == gender
+              as String,
+      gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -104,12 +109,12 @@ abstract class _$$SignUpModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? phone,
-      String? password,
-      @JsonKey(name: 'first-name') String? firstName,
-      @JsonKey(name: 'last-name') String? lastName,
-      @JsonKey(name: 'born-date') String? bornDate,
-      int? gender});
+      {String phone,
+      String password,
+      @JsonKey(name: 'first-name') String firstName,
+      @JsonKey(name: 'last-name') String lastName,
+      @JsonKey(name: 'born-date') String bornDate,
+      int gender});
 }
 
 /// @nodoc
@@ -123,38 +128,38 @@ class __$$SignUpModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = freezed,
-    Object? password = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? bornDate = freezed,
-    Object? gender = freezed,
+    Object? phone = null,
+    Object? password = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? bornDate = null,
+    Object? gender = null,
   }) {
     return _then(_$SignUpModelImpl(
-      freezed == phone
+      null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freezed == password
+              as String,
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freezed == firstName
+              as String,
+      null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freezed == lastName
+              as String,
+      null == lastName
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freezed == bornDate
+              as String,
+      null == bornDate
           ? _value.bornDate
           : bornDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      freezed == gender
+              as String,
+      null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -171,21 +176,24 @@ class _$SignUpModelImpl implements _SignUpModel {
       @JsonKey(name: 'born-date') this.bornDate,
       this.gender);
 
+  factory _$SignUpModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SignUpModelImplFromJson(json);
+
   @override
-  final String? phone;
+  final String phone;
   @override
-  final String? password;
+  final String password;
   @override
   @JsonKey(name: 'first-name')
-  final String? firstName;
+  final String firstName;
   @override
   @JsonKey(name: 'last-name')
-  final String? lastName;
+  final String lastName;
   @override
   @JsonKey(name: 'born-date')
-  final String? bornDate;
+  final String bornDate;
   @override
-  final int? gender;
+  final int gender;
 
   @override
   String toString() {
@@ -209,6 +217,7 @@ class _$SignUpModelImpl implements _SignUpModel {
             (identical(other.gender, gender) || other.gender == gender));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, phone, password, firstName, lastName, bornDate, gender);
@@ -218,32 +227,42 @@ class _$SignUpModelImpl implements _SignUpModel {
   @pragma('vm:prefer-inline')
   _$$SignUpModelImplCopyWith<_$SignUpModelImpl> get copyWith =>
       __$$SignUpModelImplCopyWithImpl<_$SignUpModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SignUpModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _SignUpModel implements SignUpModel {
   const factory _SignUpModel(
-      final String? phone,
-      final String? password,
-      @JsonKey(name: 'first-name') final String? firstName,
-      @JsonKey(name: 'last-name') final String? lastName,
-      @JsonKey(name: 'born-date') final String? bornDate,
-      final int? gender) = _$SignUpModelImpl;
+      final String phone,
+      final String password,
+      @JsonKey(name: 'first-name') final String firstName,
+      @JsonKey(name: 'last-name') final String lastName,
+      @JsonKey(name: 'born-date') final String bornDate,
+      final int gender) = _$SignUpModelImpl;
+
+  factory _SignUpModel.fromJson(Map<String, dynamic> json) =
+      _$SignUpModelImpl.fromJson;
 
   @override
-  String? get phone;
+  String get phone;
   @override
-  String? get password;
+  String get password;
   @override
   @JsonKey(name: 'first-name')
-  String? get firstName;
+  String get firstName;
   @override
   @JsonKey(name: 'last-name')
-  String? get lastName;
+  String get lastName;
   @override
   @JsonKey(name: 'born-date')
-  String? get bornDate;
+  String get bornDate;
   @override
-  int? get gender;
+  int get gender;
   @override
   @JsonKey(ignore: true)
   _$$SignUpModelImplCopyWith<_$SignUpModelImpl> get copyWith =>

@@ -8,12 +8,12 @@ part of 'sign_up_model.dart';
 
 _$SignUpModelImpl _$$SignUpModelImplFromJson(Map<String, dynamic> json) =>
     _$SignUpModelImpl(
-      json['phone'] as String?,
-      json['password'] as String?,
-      json['first-name'] as String?,
-      json['last-name'] as String?,
-      json['born-date'] as String?,
-      json['gender'] as int?,
+      json['phone'] as String,
+      json['password'] as String,
+      json['first-name'] as String,
+      json['last-name'] as String,
+      json['born-date'] as String,
+      json['gender'] as int,
     );
 
 Map<String, dynamic> _$$SignUpModelImplToJson(_$SignUpModelImpl instance) =>
