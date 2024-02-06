@@ -49,6 +49,7 @@ dependencies:
 
   freezed:
   json_annotation: ^4.8.1
+  alice: ^0.4.1
 
 flutter_launcher_icons:
   android: "launcher_icon"
