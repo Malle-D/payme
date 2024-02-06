@@ -45,11 +45,7 @@ class _ConfirmPasswordPageState extends State<ConfirmPasswordPage> {
   child: BlocConsumer<ConfirmCodeBloc, ConfirmCodeState>(
   listener: (context, state) {
     if(state is SuccessState) {
-      if(MyPreference.isLogin() ?? false){
-        Navigator.pushReplacementNamed(context, 'landing');
-      }else{
-        Navigator.pushReplacementNamed(context, 'sign_in');
-      }
+        Navigator.pushReplacementNamed(context, 'pin_code');
     }
   },
   builder: (context, state) {

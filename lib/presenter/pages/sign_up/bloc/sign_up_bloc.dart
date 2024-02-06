@@ -19,6 +19,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         final result = await _repository.signUpUser(event.signUpModel);
         if (result.token != null) {
           emit(SuccessState(result));
+          MyPreference.setFromWhichScreen(true);
           MyPreference.registerUser();
           MyPreference.saveToken(result.token.toString());
           print('+++++++++++++++++++++++++${result.token}');

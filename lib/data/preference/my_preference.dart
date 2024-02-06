@@ -7,6 +7,22 @@ class MyPreference {
     _pref = await SharedPreferences.getInstance();
   }
 
+  static bool fromWhichScreen(){
+    return _pref.getBool('which_screen') ?? false;
+  }
+
+  static void setFromWhichScreen(bool value){
+    _pref.setBool('which_screen', value);
+  }
+
+  static bool isSelectLang(){
+    return _pref.getBool('select_lang') ?? false;
+  }
+
+  static void setSelectLang() {
+    _pref.setBool('select_lang', true);
+  }
+
   static void setUser(String username) {
     _pref.setString("user", username);
   }
@@ -23,9 +39,9 @@ class MyPreference {
     return _pref.getString('bg') ?? 'assets/images/img_bg1.jpg';
   }
 
-  static bool? isLogin() {
-    return _pref.getBool("login");
-  }
+  // static bool isLogin() {
+  //   return _pref.getBool("login") ?? false;
+  // }
 
   static void saveToken(String token) {
     _pref.setString("token", token);
@@ -71,9 +87,9 @@ class MyPreference {
     _pref.setBool("register", true);
   }
 
-  static void loginUser() {
-    _pref.setBool("login", true);
-  }
+  // static void loginUser() {
+  //   _pref.setBool("login", true);
+  // }
 
   static void unRegisterUser() {
     _pref.setBool("register", false);
