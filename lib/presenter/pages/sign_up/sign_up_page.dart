@@ -45,9 +45,8 @@ class _SignUpPageState extends State<SignUpPage> {
       value: bloc,
       child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
-          if(state is SuccessState) {
+          if (state is SuccessState) {
             Navigator.pushNamed(context, 'confirm_password');
-
           }
         },
         builder: (context, state) {
@@ -59,6 +58,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(
                         height: 56,
@@ -68,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         style: GoogleFonts.poppins(
                             fontSize: 22,
                             fontWeight: FontWeight.w600,
-                            color: Color(darkerWhiteColor)),
+                            color: const Color(darkerWhiteColor)),
                       ),
                       const SizedBox(
                         height: primaryPadding,
@@ -78,14 +78,36 @@ class _SignUpPageState extends State<SignUpPage> {
                       const SizedBox(
                         height: primaryPadding,
                       ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15, bottom: 5),
+                        child: Text(
+                          'First Name',
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.poppins(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
                       InputTextWidget(
                           hint: 'First Name', controller: controllerFirstName),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15, bottom: 5),
+                        child: Text(
+                          'Last Name',
+                          style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
                       InputTextWidget(
                           hint: 'Last Name', controller: controllerLastName),
                       InputBornWidget(
                         () {
                           _selectDate();
-                          print('-------------------------');
                         },
                         hint: 'Born date',
                         controller: controllerBornDate,
@@ -181,7 +203,31 @@ class _SignUpPageState extends State<SignUpPage> {
                           padding: EdgeInsets.symmetric(horizontal: 16),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Do you have Account? ',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: const Color(darkerWhiteColor)),
+                          ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.pushNamed(context, 'sign_in');
+                            },
+                              child: Text(
+                            'Sign In',
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: const Color(tealColor)),
+                          )),
+                        ],
+                      ),
+                      const SizedBox(height: 15),
                       buttonRegistration(() {
                         bloc.add(SignUpUserEvent(SignUpModel(
                             '+998${controllerPhone.text.replaceAll(' ', '')}',
@@ -214,7 +260,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
     if (_picked != null) {
       setState(() {
-        print(_picked.millisecondsSinceEpoch);
         controllerBornDate.text = _picked.toString().split(' ')[0];
         controllerBornDateMilli.text =
             _picked.millisecondsSinceEpoch.toString();
