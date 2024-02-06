@@ -1,0 +1,1 @@
+part of 'add_card_bloc.dart';@immutableabstract class AddCardEvent {}class AddNewCardEvent extends AddCardEvent {  final AddCardModel addCardModel;  AddNewCardEvent(this.addCardModel);}

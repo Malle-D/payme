@@ -1,0 +1,1 @@
+part of 'add_card_bloc.dart';@immutableabstract class AddCardState {}class AddCardInitial extends AddCardState {}class SuccessState extends AddCardState {}class FailState extends AddCardState {}class LoadingState extends AddCardState {}

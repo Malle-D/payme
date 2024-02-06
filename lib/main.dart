@@ -4,7 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:payme_clone/data/preference/my_preference.dart';
 import 'package:payme_clone/di/di.dart';
+import 'package:payme_clone/presenter/pages/add_card/add_card_page.dart';
 import 'package:payme_clone/presenter/pages/auth/auth_page.dart';
+import 'package:payme_clone/presenter/pages/cards/cards_page.dart';
 import 'package:payme_clone/presenter/pages/confirm_password/confirm_password_page.dart';
 import 'package:payme_clone/presenter/pages/intro_language/intro_language_screen.dart';
 import 'package:payme_clone/presenter/pages/payment/payment_page.dart';
@@ -52,7 +54,7 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'sign_up',
+        initialRoute: 'landing',
         routes: {
           'auth': (context) => const AuthPage(),
           'sign_up': (context) => const SignUpPage(),
@@ -63,7 +65,9 @@ class MyApp extends StatelessWidget {
           'payment': (context) => const PaymentPage(),
           'services': (context) => const ServicesPage(),
           'landing': (context) => const LandingScreen(currentPage: 0),
-          'theme': (context) => const ThemePage()
+          'theme': (context) => const ThemePage(),
+          'cards' : (context) => const CardsPage(),
+          'add_card' : (context) => AddCardPage(),
         });
   }
 }
