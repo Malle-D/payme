@@ -39,15 +39,8 @@ class IntroLanguageScreen extends StatelessWidget {
 
             InkWell(
               onTap: (){
-                if(MyPreference.isLogin() ?? false){
-                  Navigator.pushReplacementNamed(context, 'landing');
-                }else{
-                  if(MyPreference.isRegistered()){
-                    Navigator.pushReplacementNamed(context, 'sign_in');
-                  }else{
-                    Navigator.pushReplacementNamed(context, 'sign_up');
-                  }
-                }
+                  MyPreference.setSelectLang();
+                  Navigator.pushReplacementNamed(context, 'sign_up');
               },
               child: Container(
                 height: 60,

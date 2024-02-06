@@ -19,7 +19,7 @@ class ConfirmCodeBloc extends Bloc<ConfirmCodeEvent, ConfirmCodeState> {
     on<ConfirmCodeUserEvent>((event, emit) async{
       final ConfirmCodeResponse result;
       try {
-        if(MyPreference.isRegistered()){
+        if(!MyPreference.fromWhichScreen()){
           result = await _repository.signInVerify(event.confirmCodeModel);
         }else{
          result = await _repository.signUpVerify(event.confirmCodeModel);

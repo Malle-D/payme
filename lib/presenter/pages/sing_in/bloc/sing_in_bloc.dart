@@ -18,7 +18,7 @@ class SingInBloc extends Bloc<SingInEvent, SingInState> {
         final result = await _repository.singInUser(event.signInModel);
         if (result.token != null) {
           emit(SuccessState(result));
-          MyPreference.loginUser();
+          MyPreference.setFromWhichScreen(false);
           MyPreference.saveToken(result.token.toString());
           print('+++++++++++++++++++++++++${result.token}');
         } else {

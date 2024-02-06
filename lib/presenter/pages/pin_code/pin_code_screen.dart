@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:payme_clone/data/preference/my_preference.dart';
 import 'package:payme_clone/utils/utils.dart';
 
 class PinCodeScreen extends StatefulWidget {
@@ -47,9 +48,9 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
           physics: const BouncingScrollPhysics(),
           children: [
             const SizedBox(height: 60,),
-            const Center(
+             Center(
               child: Text(
-                'PIN-kodni o`rnatish?',
+                MyPreference.getPinCode().isEmpty ? 'PIN-kod o`rnatish?' : 'PIN-kodni kiriting',
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.white,
@@ -154,12 +155,20 @@ class _PinCodeScreenState extends State<PinCodeScreen> {
             /// reset button
             TextButton(
               onPressed: () {
-                // setState(() {
-                //   enteredPin = '';
-                // });
+                if(MyPreference.getPinCode().isEmpty) {
+                  MyPreference.setPinCode(enteredPin);
+                  Navigator.pushReplacementNamed(context, 'landing');
+                }else{
+                  if(MyPreference.getPinCode() == enteredPin) {
+                    Navigator.pushReplacementNamed(context, 'landing');
+                  }else{
+                    enteredPin = "";
+                    setState(() {
 
-                Navigator.pushReplacementNamed(context, 'landing');
-              },
+                    });
+                  }
+                }
+                },
               child: const Text(
                 'Submit',
                 style: TextStyle(
