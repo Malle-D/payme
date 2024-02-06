@@ -71,6 +71,10 @@ class MyPreference {
     _pref.setBool("register", true);
   }
 
+  static void loginUser() {
+    _pref.setBool("login", true);
+  }
+
   static void unRegisterUser() {
     _pref.setBool("register", false);
   }

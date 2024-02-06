@@ -15,6 +15,7 @@ import 'package:payme_clone/presenter/pages/home/home_page.dart';
 import 'package:payme_clone/presenter/pages/service/services_page.dart';
 import 'package:payme_clone/presenter/pages/sign_up/bloc/sign_up_bloc.dart';
 import 'package:payme_clone/presenter/pages/sign_up/sign_up_page.dart';
+import 'package:payme_clone/presenter/pages/sing_in/sing_in.dart';
 import 'package:payme_clone/presenter/pages/theme/theme_page.dart';
 import 'package:payme_clone/presenter/screens/landing/landing_screen.dart';
 import 'package:payme_clone/utils/utils.dart';
@@ -54,10 +55,11 @@ class MyApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: const Color(pantonColor)),
           useMaterial3: true,
         ),
-        initialRoute: 'landing',
+        initialRoute: 'intro_language',
         routes: {
           'auth': (context) => const AuthPage(),
           'sign_up': (context) => const SignUpPage(),
+          'sign_in': (context) => const SingIn(),
           'intro_language': (context) => const IntroLanguageScreen(),
           'confirm_password': (context) => const ConfirmPasswordPage(),
           'pin_code': (context) => const PinCodeScreen(),

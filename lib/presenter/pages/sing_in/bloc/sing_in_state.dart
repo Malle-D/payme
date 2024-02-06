@@ -3,8 +3,17 @@ part of 'sing_in_bloc.dart';
 @immutable
 abstract class SingInState{}
 
-class SingInInitial extends SingInState {}
 
-class SingInSubmit extends SingInState{
-  SingInSubmit(Future<SignInResponse> singInUser);
+class SuccessState extends SingInState {
+  final SignInResponse result;
+
+  SuccessState(this.result);
 }
+
+class FailState extends SingInState {
+  final String msg;
+
+  FailState(this.msg);
+}
+
+class SingInInitial extends SingInState {}

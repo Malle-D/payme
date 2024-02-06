@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:payme_clone/data/preference/my_preference.dart';
 import 'package:payme_clone/utils/utils.dart';
 
 class IntroLanguageScreen extends StatelessWidget {
@@ -38,7 +39,15 @@ class IntroLanguageScreen extends StatelessWidget {
 
             InkWell(
               onTap: (){
-                Navigator.pushReplacementNamed(context, 'auth');
+                if(MyPreference.isLogin() ?? false){
+                  Navigator.pushReplacementNamed(context, 'landing');
+                }else{
+                  if(MyPreference.isRegistered()){
+                    Navigator.pushReplacementNamed(context, 'sign_in');
+                  }else{
+                    Navigator.pushReplacementNamed(context, 'sign_up');
+                  }
+                }
               },
               child: Container(
                 height: 60,

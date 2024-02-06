@@ -38,7 +38,9 @@ class _SingInState extends State<SingIn> {
       value: _bloc,
       child: BlocConsumer<SingInBloc, SingInState>(
         listener: (context, state) {
-
+          if(state is SuccessState){
+            Navigator.pushNamed(context, 'confirm_password');
+          }
         },
         builder: (context, state) {
           return Scaffold(
@@ -61,7 +63,8 @@ class _SingInState extends State<SingIn> {
                   const Spacer(),
                   InkWell(
                     onTap: (){
-                      _bloc.add(SingInEvent(controllerNumber.text, controllerPassword.text));
+                      print('***************** ${controllerNumber.text}');
+                      _bloc.add(SignInUserEvent(SignInModel(controllerNumber.text.replaceAll(' ', ''), controllerPassword.text)));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,

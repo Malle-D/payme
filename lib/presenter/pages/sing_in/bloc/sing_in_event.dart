@@ -1,10 +1,10 @@
 part of 'sing_in_bloc.dart';
 
-class SingInEvent {
-  final String phone;
-  final String password;
+@immutable class SingInEvent {}
 
-  SingInEvent(this.phone, this.password);
+class SignInUserEvent extends SingInEvent {
+  final SignInModel signInModel;
+
+  SignInUserEvent(this.signInModel);
 }
-
 

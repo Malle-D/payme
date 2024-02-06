@@ -14,7 +14,7 @@ class KeyboardConfirmPassword extends StatelessWidget {
 
   const KeyboardConfirmPassword({
     Key? key,
-    this.buttonSize = 35,
+    this.buttonSize = 40,
     this.buttonColor = Colors.indigo,
     this.iconColor = Colors.amber,
     required this.delete,

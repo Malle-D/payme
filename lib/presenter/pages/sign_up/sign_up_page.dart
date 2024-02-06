@@ -44,7 +44,12 @@ class _SignUpPageState extends State<SignUpPage> {
     return BlocProvider.value(
       value: bloc,
       child: BlocConsumer<SignUpBloc, SignUpState>(
-        listener: (context, state) {},
+        listener: (context, state) {
+          if(state is SuccessState) {
+            Navigator.pushNamed(context, 'confirm_password');
+
+          }
+        },
         builder: (context, state) {
           return Scaffold(
             backgroundColor: Color(primaryColor),

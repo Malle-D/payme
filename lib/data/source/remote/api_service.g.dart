@@ -46,11 +46,67 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<ConfirmCodeResponse> signUpVerify(
+      ConfirmCodeModel confirmCodeModel) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = confirmCodeModel;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ConfirmCodeResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'http://195.158.16.140/mobile-bank/v1/auth/sign-up/verify',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ConfirmCodeResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ConfirmCodeResponse> signInVerify(
+      ConfirmCodeModel confirmCodeModel) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = confirmCodeModel;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ConfirmCodeResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'http://195.158.16.140/mobile-bank/v1/auth/sign-in/verify',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ConfirmCodeResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<SignInResponse> signInUser(SignInModel signInModel) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    final _data = signInModel;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SignInResponse>(Options(
       method: 'POST',
